@@ -105,7 +105,7 @@ while(<FILE>) {
 				$mz =~ s/\$URL(_X)?:.*\|//;
 			} 
 
-			if ($mz ~= /\$URL_X/) {
+			if ($mz =~ /\$URL_X/) {
 				$zone =~ s/(ARGS|BODY|HEADERS)(.*)/\$$1_VAR_X:^$varnam$2\$/;
 			} else {
 				$zone =~ s/(ARGS|BODY|HEADERS)(.*)/\$$1_VAR:$varnam$2/;
